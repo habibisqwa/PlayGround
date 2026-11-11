@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#101824" />
+  <title>GOLD RUN — Wanted Worldwide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="game-shell">
+    <canvas id="game-canvas" aria-label="3D Gold Run game"></canvas>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">✦</span><div><b>GOLD<span>RUN</span></b><small>WANTED WORLDWIDE</small></div></div>
+      <div class="wanted"><span class="wanted-dot"></span><span>WANTED</span><strong id="wanted-level">01</strong><i>▲▲▲</i></div>
+      <button class="sound-btn" id="sound-btn" aria-label="Toggle sound">♫</button>
+    </header>
+    <section class="hud" id="hud">
+      <div class="stat distance"><small>DISTANCE</small><strong><span id="distance">000</span><em>m</em></strong></div>
+      <div class="stat gold-stat"><small>GOLD STASH</small><strong><span class="coin-icon">●</span><span id="gold">000</span></strong></div>
+      <div class="heat-card"><div class="heat-label"><span>HEAT</span><span id="heat-value">LOW</span></div><div class="heat-track"><i id="heat-fill"></i></div><div class="heat-caption">THE WORLD IS CLOSING IN</div></div>
+    </section>
+    <div class="country-toast" id="country-toast"><span>⚑</span><div><small>NEW BOUNTY</small><b id="country-name">UNITED STATES</b></div></div>
+    <div class="toast" id="toast">GOLD RUSH!</div>
+    <div class="start-screen" id="start-screen">
+      <div class="intro-kicker"><span></span> THE WORLD'S MOST WANTED <span></span></div>
+      <h1>MAKE GOLD.<br><i>MAKE A RUN.</i></h1>
+      <p>Every nation wants your gift. Keep moving, scoop up the shine, and don't let them catch you.</p>
+      <div class="start-facts"><div><b>3</b><span>LANES</span></div><div><b>∞</b><span>CHASE</span></div><div><b>1</b><span>GOLDMAKER</span></div></div>
+      <button class="play-button" id="play-button"><span>START RUN</span><b>↗</b></button>
+      <div class="control-hint"><span>← →</span> CHANGE LANES <i>•</i> <span>↑</span> JUMP <i>•</i> <span>G</span> PRODUCE GOLD</div>
+    </div>
+    <section class="game-over" id="game-over" hidden>
+      <div class="over-tag">RUN ENDED · BOUNTY CLAIMED</div><h2>CAUGHT<br><i>IN THE ACT.</i></h2>
+      <p>Your gold trail led them right to you.</p>
+      <div class="result-row"><div><small>DISTANCE</small><b id="final-distance">0m</b></div><div><small>GOLD MADE</small><b id="final-gold">0</b></div></div>
+      <button class="play-button" id="replay-button"><span>RUN IT BACK</span><b>↻</b></button>
+    </section>
+    <div class="mobile-controls" id="mobile-controls">
+      <button class="move-btn left-btn" data-action="left" aria-label="Move left">‹</button>
+      <div class="action-controls"><button class="action-btn jump-btn" data-action="jump"><span>↑</span><small>JUMP</small></button><button class="action-btn gold-btn" data-action="gold"><span>✦</span><small>MAKE GOLD</small></button></div>
+      <button class="move-btn right-btn" data-action="right" aria-label="Move right">›</button>
+    </div>
+    <div class="bottom-note" id="bottom-note"><span class="pulse"></span> KEEP MOVING · STAY GOLDEN</div>
+  </main>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
